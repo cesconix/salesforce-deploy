@@ -1,0 +1,30 @@
+{
+  "name": "sfdc-utils",
+  "version": "1.0.0-alpha.0",
+  "description": "Utils for Salesforce Commerce Cloud",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^12.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesconix/sfdc-utils.git"
+  },
+  "keywords": [
+    "salesforce",
+    "demandware",
+    "webdav",
+    "cartridge",
+    "upload"
+  ],
+  "author": "Francesco Pasqua <cesconix@me.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cesconix/sfdc-utils/issues"
+  },
+  "homepage": "https://github.com/cesconix/sfdc-utils#readme"
+}
