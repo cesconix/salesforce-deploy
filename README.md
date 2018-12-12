@@ -1,5 +1,4 @@
 # Salesforce Utils
-### Utils for Salesforce Commerce Cloud. For node.js and the web.
 
 [![Build Status](https://travis-ci.com/cesconix/sfdc-utils.svg?branch=develop)](https://travis-ci.com/cesconix/sfdc-utils) 
 [![NPM version](https://img.shields.io/npm/v/sfdc-utils.svg)](https://www.npmjs.com/package/sfdc-utils)
