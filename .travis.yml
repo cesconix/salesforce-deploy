@@ -3,6 +3,8 @@ node_js:
   - "node"
 install:
   - npm ci
+after_success:
+  - npm run test:cov
 branches:
   only:
     - develop

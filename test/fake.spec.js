@@ -1,3 +1,6 @@
+import sum from '../src/main'
+
 test('fake test', () => {
-  expect(true).toBe(true)
+  const result = sum(1, 2)
+  expect(result).toBe(3)
 })
