@@ -9,7 +9,7 @@ module.exports = {
           browsers: ['ie >= 11']
         },
         exclude: ['transform-async-to-generator', 'transform-regenerator'],
-        modules: false,
+        modules: 'auto',
         loose: true
       }
     ]
