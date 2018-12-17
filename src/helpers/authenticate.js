@@ -8,8 +8,8 @@ const authenticate = async ({ clientId, clientPassword }) => {
     const reqAuth = { username: clientId, password: clientPassword }
     const { data } = await axios.post(reqUrl, qs.stringify(reqData), { auth: reqAuth })
     return data.access_token
-  } catch (err) {
-    return Promise.reject(new Error(err))
+  } catch (e) {
+    return Promise.reject(new Error(e))
   }
 }
 
