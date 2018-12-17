@@ -1,10 +1,22 @@
 {
-  "name": "sfdc-utils",
+  "name": "salesforce-deploy",
   "version": "1.0.0-alpha.1",
   "description": "Utils for Salesforce Commerce Cloud",
-  "main": "dist/sfdc-utils.cjs.js",
-  "unpkg": "dist/sfdc-utils.umd.js",
-  "module": "dist/sfdc-utils.esm.js",
+  "license": "MIT",
+  "repository": "github:cesconix/salesforce-deploy",
+  "homepage": "https://github.com/cesconix/salesforce-deploy#readme",
+  "bugs": "https://github.com/cesconix/salesforce-deploy/issues",
+  "keywords": [
+    "salesforce",
+    "demandware",
+    "deploy",
+    "webdav",
+    "cartridge",
+    "upload"
+  ],
+  "author": "Francesco Pasqua <cesconix@me.com>",
+  "main": "dist/salesforce-deploy.cjs.js",
+  "module": "dist/salesforce-deploy.esm.js",
   "files": [
     "dist",
     "src"
@@ -43,7 +55,6 @@
     "rimraf": "^2.6.2",
     "rollup": "^0.68.0",
     "rollup-plugin-babel": "^4.1.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-terser": "^3.0.0",
     "standard": "^12.0.1"
   },
@@ -54,22 +65,5 @@
     "env": [
       "jest"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cesconix/sfdc-utils.git"
-  },
-  "keywords": [
-    "salesforce",
-    "demandware",
-    "webdav",
-    "cartridge",
-    "upload"
-  ],
-  "author": "Francesco Pasqua <cesconix@me.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cesconix/sfdc-utils/issues"
-  },
-  "homepage": "https://github.com/cesconix/sfdc-utils#readme"
+  }
 }

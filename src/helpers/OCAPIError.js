@@ -1,4 +1,4 @@
-import get from 'lodash/get'
+import { get } from 'lodash'
 
 class OCAPIError extends Error {
   constructor (meta) {

@@ -1,5 +1,5 @@
+import { get } from 'lodash'
 import axios from 'axios'
-import get from 'lodash/get'
 import authenticate from './helpers/authenticate'
 import OCAPIError from './helpers/OCAPIError'
 
