@@ -3,8 +3,8 @@ import authenticate from './helpers/authenticate'
 const main = async () => {
   try {
     const token = await authenticate({
-      clientId: '***REMOVED***',
-      clientPassword: '***REMOVED***'
+      clientId: '',
+      clientPassword: ''
     })
     console.log(token)
   } catch (err) {
