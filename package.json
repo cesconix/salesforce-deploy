@@ -1,7 +1,7 @@
 {
   "name": "salesforce-deploy",
   "version": "1.0.0-alpha.1",
-  "description": "Utils for Salesforce Commerce Cloud",
+  "description": "Deploy util for Salesforce Commerce Cloud",
   "license": "MIT",
   "repository": "github:cesconix/salesforce-deploy",
   "homepage": "https://github.com/cesconix/salesforce-deploy#readme",
@@ -28,9 +28,11 @@
     "test:watch": "npm test -- --watch",
     "test:cov": "npm test -- --coverage --coverageReporters=text-lcov | coveralls",
     "build": "rollup -c",
-    "start": "babel-node src/main"
+    "start": "babel-node src/main",
+    "start:debug": "babel-node --nolazy --inspect-brk=9229 src/main"
   },
   "dependencies": {
+    "archiver": "^3.0.0",
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "querystring": "^0.2.0"
@@ -40,7 +42,7 @@
     "@babel/node": "^7.2.0",
     "@babel/plugin-external-helpers": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
     "axios-mock-adapter": "^1.15.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
@@ -53,7 +55,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
     "rimraf": "^2.6.2",
-    "rollup": "^0.68.0",
+    "rollup": "^0.68.1",
     "rollup-plugin-babel": "^4.1.0",
     "rollup-plugin-terser": "^3.0.0",
     "standard": "^12.0.1"
