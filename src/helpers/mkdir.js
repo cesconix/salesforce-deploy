@@ -1,15 +1,14 @@
 import path from 'path'
-import axios from 'axios'
 
-const mkdir = async (dir, options) => {
+const mkdir = async (dir, axios) => {
   try {
-    const url = path.join('/', dir)
-    const method = 'mkcol'
-    const validateStatus = status => status === 201
-    const response = await axios({ ...options, url, method, validateStatus })
-    return response.status === 201
+    const res = await axios({
+      method: 'mkcol',
+      url: path.join('/', dir)
+    })
+    return res.status === 201
   } catch (e) {
-    return Promise.reject(e)
+    throw new Error(e)
   }
 }
 

@@ -1,15 +1,15 @@
 import path from 'path'
-import axios from 'axios'
 
-const find = async (dir, options) => {
+const find = async (dir, axios) => {
   try {
-    const url = path.join('/', dir)
-    const method = 'propfind'
-    const validateStatus = status => status === 207 || status === 404
-    const response = await axios({ ...options, url, method, validateStatus })
-    return response.status === 207
+    const res = await axios({
+      method: 'propfind',
+      url: path.join('/', dir),
+      validateStatus: status => status === 207 || status === 404
+    })
+    return res.status === 207
   } catch (e) {
-    return Promise.reject(e)
+    throw new Error(e)
   }
 }
 
