@@ -11,7 +11,7 @@ export default [
       indent: false
     },
     external: [
-      ...Object.keys(pkg.dependencies || {})
+      ...Object.keys(pkg.dependencies || {}), 'fs', 'path'
     ],
     plugins: [babel()]
   },
@@ -25,7 +25,7 @@ export default [
       indent: false
     },
     external: [
-      ...Object.keys(pkg.dependencies || {})
+      ...Object.keys(pkg.dependencies || {}), 'fs', 'path'
     ],
     plugins: [babel()]
   }
