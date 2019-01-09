@@ -13,4 +13,4 @@
 
 ### License
 
-MIT. Copyright (c) [Francesco Pasqua](https://www.linkedin.com/in/cesconix).
+MIT. Copyright (c) 2018, 2019 [Francesco Pasqua](https://www.linkedin.com/in/cesconix).
