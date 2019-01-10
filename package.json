@@ -1,6 +1,6 @@
 {
   "name": "salesforce-deploy",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "Deploy util for Salesforce Commerce Cloud",
   "license": "MIT",
   "repository": "github:cesconix/salesforce-deploy",
@@ -24,9 +24,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "pretest": "npm run build",
-    "test": "jest",
-    "test:watch": "npm test -- --env node --watch",
-    "test:cov": "npm test -- --env node --coverage --coverageReporters=text-lcov | coveralls",
+    "test": "jest --env node",
+    "test:watch": "npm test -- --watch",
+    "test:cov": "npm test -- --coverage --coverageReporters=text-lcov | coveralls",
     "build": "rollup -c",
     "start": "babel-node src/main",
     "start:debug": "babel-node --nolazy --inspect-brk=9229 src/main"
