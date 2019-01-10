@@ -1,6 +1,6 @@
 {
   "name": "salesforce-deploy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deploy util for Salesforce Commerce Cloud",
   "license": "MIT",
   "repository": "github:cesconix/salesforce-deploy",
@@ -34,7 +34,6 @@
   "dependencies": {
     "archiver": "^3.0.0",
     "axios": "^0.18.0",
-    "lodash": "^4.17.11",
     "querystring": "^0.2.0"
   },
   "devDependencies": {
@@ -57,7 +56,7 @@
     "mock-fs": "^4.7.0",
     "nock": "^10.0.6",
     "rimraf": "^2.6.3",
-    "rollup": "^0.68.2",
+    "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.2.0",
     "rollup-plugin-terser": "^4.0.1",
     "standard": "^12.0.1"
