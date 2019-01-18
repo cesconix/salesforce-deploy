@@ -47,7 +47,7 @@ deploy({
 
 ### Returns
 
-
+A promise fulfilled with `true` if deploy process succeded, otherwise `false`.
  
 ### Example
 
