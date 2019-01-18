@@ -1,14 +1,17 @@
 # Salesforce Deploy
 
+> cartridges deploy made easy
+
 [![build status](https://travis-ci.com/cesconix/salesforce-deploy.svg)](https://travis-ci.com/cesconix/salesforce-deploy) 
 [![npm version](https://img.shields.io/npm/v/salesforce-deploy.svg)](https://www.npmjs.com/package/salesforce-deploy)
 [![dependencies](https://img.shields.io/david/cesconix/salesforce-deploy.svg)](https://david-dm.org/cesconix/salesforce-deploy)
 [![devDependencies](https://img.shields.io/david/dev/cesconix/salesforce-deploy.svg)](https://david-dm.org/cesconix/salesforce-deploy?type=dev)
+[![vulnerabilities](https://snyk.io/test/github/cesconix/salesforce-deploy/badge.svg?targetFile=package.json)](https://snyk.io/test/github/cesconix/salesforce-deploy?targetFile=package.json)
 [![coverage](https://coveralls.io/repos/github/cesconix/salesforce-deploy/badge.svg)](https://coveralls.io/github/cesconix/salesforce-deploy)
 [![javascript style guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-Util to deploy cartridges on your Salesforce Commerce Cloud instance.
+Utility to deploy cartridges on a Salesforce Commerce Cloud instance.
 
 ## Installation
 
@@ -22,14 +25,14 @@ npm install salesforce-deploy
 import deploy from 'salesforce-deploy'
 
 deploy({
-  hostname: "<INSTANCE_HOSTNAME>",
-  username: "<BUSINESS_MANAGER_USERNAME>"
-  password: "<BUSINESS_MANAGER_PASSWORD>",
+  hostname: "<sfcc-instance-hostname>",
+  username: "<business-manager-username>",
+  password: "<business-manager-password>",
   cartridges: [
-    { source: "<CARTRIDGES_SOURCE_PATH>" },    
-    { source: "<CARTRIDGES_SOURCE_PATH>", exclude: "<GLOB_PATTERN>" }
+    { source: "<cartridges-path>" },    
+    { source: "<cartridges-path>", exclude: "<glob-pattern>" }
   ],
-  codeVersion: "<CODE_VERSION>",
+  codeVersion: "<code-version>",
   force: false
 })
 ```
@@ -47,32 +50,52 @@ deploy({
 
 ### Returns
 
-A promise fulfilled with `true` if deploy process succeded, otherwise `false`.
+A `Promise` fulfilled with `true` if deploy process succeded, otherwise `false`.
  
-### Example
+### Example - Deploy cartridges from a single folder
 
 ```javascript
 import deploy from 'salesforce-deploy'
 
-let isDeployed
+let deployed
 
 try {
-  isDeployed = await deploy({
+  deployed = await deploy({
     hostname: "dev01-realm-customer.demandware.net",
-    username: "bm_user"
+    username: "bm_user",
+    password: "bm_pass",
+    cartridges: "./cartridges/project_1",
+    codeVersion: "v1.0.0-rc.0"
+  })
+} catch (e) {
+  deployed = false
+}
+
+console.log(deployed) // true for sure!
+```
+### Example - Deploy cartridges from multi folder
+
+```javascript
+import deploy from 'salesforce-deploy'
+
+let deployed
+
+try {
+  deployed = await deploy({
+    hostname: "dev01-realm-customer.demandware.net",
+    username: "bm_user",
     password: "bm_pass",
     cartridges: [
       { source: "./cartridges/project_1" },    
-      { source: "./cartridges/project_2", exclude: "**/cart/**" }
+      { source: "./cartridges/project_2", exclude: "**/{cart,checkout/**" } // `exclude` property value must be a glob pattern
     ],
-    codeVersion: "v1.0.0-rc.0",
-    force: true
+    codeVersion: "v1.0.0-rc.0"
   })
 } catch (e) {
-  isDeployed = false
+  deployed = false
 }
 
-console.log(isDeployed) // true for sure!
+console.log(deployed) // true for sure!
 ```
 
 ## Contributing
@@ -80,6 +103,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-### License
+## License
 
-MIT. Copyright (c) 2018, 2019 [Francesco Pasqua](https://www.linkedin.com/in/cesconix).
+MIT. Copyright (C) 2018, 2019 [Francesco Pasqua](https://www.linkedin.com/in/cesconix).
