@@ -7,7 +7,27 @@ import upload from './helpers/upload'
 import unzip from './helpers/unzip'
 import rm from './helpers/rm'
 
-const deploy = async ({ hostname, username, password, cartridges, codeVersion }) => {
+const deploy = async ({ hostname, username, password, cartridges, codeVersion, force = false }) => {
+  if (!hostname) {
+    throw new Error('Missing "Instance Hostname"')
+  }
+
+  if (!username) {
+    throw new Error('Missing "Business Manager Username"')
+  }
+
+  if (!password) {
+    throw new Error('Missing "Business Manager Password"')
+  }
+
+  if (!codeVersion) {
+    throw new Error('Missing "Code Version"')
+  }
+
+  if (!cartridges) {
+    throw new Error('Missing "Cartridges" source')
+  }
+
   if (typeof cartridges === 'string') {
     cartridges = [ { source: cartridges } ]
   }
@@ -26,8 +46,11 @@ const deploy = async ({ hostname, username, password, cartridges, codeVersion })
   const dest = `/Cartridges/${codeVersion}`
 
   try {
-    const codeVersionExists = await find(dest, instance)
+    if (force) {
+      await rm(dest, instance)
+    }
 
+    const codeVersionExists = await find(dest, instance)
     if (codeVersionExists) {
       throw new Error('Code version exists')
     }
@@ -41,8 +64,10 @@ const deploy = async ({ hostname, username, password, cartridges, codeVersion })
 
     await unzip(file, instance)
     await rm(file, instance)
+
+    return file
   } catch (e) {
-    console.error(e)
+    throw new Error(e)
   }
 }
 
