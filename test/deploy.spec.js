@@ -1,12 +1,14 @@
+import { EventEmitter } from 'events'
+import mockFs from 'mock-fs'
 import * as find from '../src/helpers/find'
 import * as mkdir from '../src/helpers/mkdir'
 import * as zip from '../src/helpers/zip'
 import * as upload from '../src/helpers/upload'
 import * as unzip from '../src/helpers/unzip'
 import * as rm from '../src/helpers/rm'
-import mockFs from 'mock-fs'
 import deploy from '../src/main'
 
+const emitter = new EventEmitter()
 const mockFileTree = {
   '/cartridges': {
     'project_1': { 'int_foo': {}, 'int_bar': {} },
@@ -53,7 +55,8 @@ describe('deploy', () => {
       cartridges: [
         { source: '/cartridges/project_1' },
         { source: '/cartridges/project_fail' }
-      ]
+      ],
+      emitter
     })
 
     mockFs.restore()
@@ -76,7 +79,8 @@ describe('deploy', () => {
       cartridges: [
         { source: '/cartridges/project_1' },
         { source: '/cartridges/project_2' }
-      ]
+      ],
+      emitter
     })
 
     mockFs.restore()
@@ -102,7 +106,8 @@ describe('deploy', () => {
       password: 'test',
       codeVersion: 'test',
       cartridges: '/cartridges',
-      force: true
+      force: true,
+      emitter
     })
 
     mockFs.restore()
