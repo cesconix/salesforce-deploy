@@ -41,5 +41,4 @@ describe('helper: upload', () => {
 
     await expect(check).rejects.toThrow()
   })
-
 })
