@@ -64,7 +64,7 @@ const deploy = async ({ hostname, username, password, cartridges, codeVersion, f
     let file
 
     emitter.emit('zip', cartridges)
-    file = await zip(cartridges, process.env.TMPDIR, codeVersion)
+    file = await zip(cartridges, process.env.TMPDIR || '.', codeVersion)
 
     emitter.emit('upload', file)
     file = await upload(file, dest, instance)
