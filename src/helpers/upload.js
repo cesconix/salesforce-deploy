@@ -1,5 +1,8 @@
 import fs from 'fs'
 import path from 'path'
+import followRedirects from 'follow-redirects'
+
+followRedirects.maxBodyLength = 100 * 1024 * 1024
 
 const upload = async (src, dest, axios) => {
   try {
@@ -10,6 +13,7 @@ const upload = async (src, dest, axios) => {
       url: file,
       method: 'put',
       data: stream,
+      maxRedirects: 0,
       validateStatus: status => status < 500
     })
 
