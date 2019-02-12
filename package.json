@@ -1,6 +1,6 @@
 {
   "name": "salesforce-deploy",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Utility to deploy cartridges on a Salesforce Commerce Cloud instance",
   "license": "MIT",
   "repository": "github:cesconix/salesforce-deploy",
