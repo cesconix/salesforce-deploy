@@ -6,7 +6,7 @@ const unzip = async (file, axios) => {
     const res = await axios({
       url: path.join('/', file),
       method: 'POST',
-      data: qs.stringify({ method: 'unzip' }),
+      data: qs.stringify({ method: 'UNZIP' }),
       validateStatus: status => status < 500
     })
     return res.status === 204
