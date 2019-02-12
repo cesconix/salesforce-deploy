@@ -11,7 +11,7 @@ const upload = async (src, dest, axios) => {
 
     const res = await axios({
       url: file,
-      method: 'put',
+      method: 'PUT',
       data: stream,
       maxRedirects: 0,
       validateStatus: status => status < 500

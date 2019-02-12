@@ -3,7 +3,7 @@ import path from 'path'
 const find = async (dir, axios) => {
   try {
     const res = await axios({
-      method: 'propfind',
+      method: 'PROPFIND',
       url: path.join('/', dir),
       validateStatus: status => status === 207 || status === 404
     })

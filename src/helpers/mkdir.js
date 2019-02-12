@@ -3,7 +3,7 @@ import path from 'path'
 const mkdir = async (dir, axios) => {
   try {
     const res = await axios({
-      method: 'mkcol',
+      method: 'MKCOL',
       url: path.join('/', dir),
       validateStatus: status => status < 500
     })

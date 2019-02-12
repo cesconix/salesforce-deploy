@@ -3,7 +3,7 @@ import path from 'path'
 const rm = async (file, axios) => {
   try {
     const res = await axios({
-      method: 'delete',
+      method: 'DELETE',
       url: path.join('/', file),
       validateStatus: status => status < 500
     })
