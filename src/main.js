@@ -8,7 +8,15 @@ import upload from './helpers/upload'
 import unzip from './helpers/unzip'
 import rm from './helpers/rm'
 
-const deploy = async ({ hostname, username, password, cartridges, codeVersion, force = false, emitter = new EventEmitter() }) => {
+const deploy = async ({
+  hostname,
+  username,
+  password,
+  cartridges,
+  codeVersion,
+  force = false,
+  emitter = new EventEmitter()
+}) => {
   if (!hostname) {
     throw new Error('Missing "Instance Hostname"')
   }
@@ -30,7 +38,7 @@ const deploy = async ({ hostname, username, password, cartridges, codeVersion, f
   }
 
   if (typeof cartridges === 'string') {
-    cartridges = [ { source: cartridges } ]
+    cartridges = [{ source: cartridges }]
   }
 
   try {
