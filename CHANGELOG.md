@@ -1,6 +1,15 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.2.6](https://github.com/cesconix/salesforce-deploy/compare/v1.2.4...v1.2.6) (2019-10-18)
+
+
+### Bug Fixes
+
+* change webdav method unzip to UNZIP ([b7c91ab](https://github.com/cesconix/salesforce-deploy/commit/b7c91ab11659a318f222699b506a9406129b6d67))
+* minor changes for js standard syntax ([21f2ae1](https://github.com/cesconix/salesforce-deploy/commit/21f2ae18dd93c7a9fe3d0c6ab6d4576403911664))
+* minor changes for js standard syntax ([315683b](https://github.com/cesconix/salesforce-deploy/commit/315683be26a2238c350e7b1ea5ce78ccf2ccf2c0))
 
 <a name="1.2.4"></a>
 ## [1.2.4](https://github.com/cesconix/salesforce-deploy/compare/v1.2.3...v1.2.4) (2019-02-12)
