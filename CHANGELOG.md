@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.7](https://github.com/cesconix/salesforce-deploy/compare/v1.2.6...v1.2.7) (2022-02-02)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([d327038](https://github.com/cesconix/salesforce-deploy/commit/d327038d30e647bb0c6cae548993a57be73e422a))
+
 ### [1.2.6](https://github.com/cesconix/salesforce-deploy/compare/v1.2.4...v1.2.6) (2019-10-18)
 
 
