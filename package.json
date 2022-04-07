@@ -33,7 +33,7 @@
     "release": "npm run build && standard && standard-version"
   },
   "dependencies": {
-    "archiver": "^3.1.1",
+    "archiver": "^4.0.2",
     "axios": "^0.21.3",
     "follow-redirects": "^1.9.0",
     "querystring": "^0.2.0"
